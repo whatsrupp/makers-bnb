@@ -5,7 +5,7 @@ class Property
   property :id,           Serial
   property :name,         String
   property :location,     String
-  property :price,        Decimal
-  property :description,  String
+  property :price,        String
+  property :description,  String, :length => 255
 
 end

@@ -1,1 +1,28 @@
-Property added
+<h1>Property Added</h1>
+
+<body>
+
+  <%if !@properties.empty?%>
+    <%@properties.each do |property|%>
+
+      <div class='property-index-frame'>
+        <div class='property-info' id='name'>
+          Property Name: <%=property.name %>
+        </div>
+
+        <div class='property-info' id='location'>
+          Location: <%=property.location %>
+        </div>
+        <div class='property-info' id='price'>
+          Price: <%=property.price %>
+
+        </div>
+        <div class='property-info' id='description'>
+          Description: <%=property.description %>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+
+
+</body>
