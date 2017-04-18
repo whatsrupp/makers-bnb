@@ -1,6 +1,6 @@
 <h1>Welcome. Please sign up below</h1>
 <form action='/users' method='post'>
-Email:<input type='email' name='email' id='email' value='<=% @user.email %>' required>
-Password:<input type='password' name='password' id='password'>
+  Email:<input type='email' name='email' id='email' value='<%= @user.email %>' required>
+  Password:<input type='password' name='password' id='password'>
 <input type='submit' value='Register'>
 </form>

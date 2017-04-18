@@ -2,7 +2,7 @@ module NewPropertyHelpers
 
   DEFAULT_NAME = 'The Bakery'
   DEFAULT_LOCATION = 'Old Street'
-  DEFAULT_PRICE = 10.90
+  DEFAULT_PRICE = '10.90'
   DEFAULT_DESCRIPTION = 'A property near the heart of the city with excellent transport.'
 
   def add_new_property(name: DEFAULT_NAME,
