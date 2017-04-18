@@ -4,6 +4,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'database_cleaner'
 require 'rspec'
+require_relative 'helpers/session'
 
 # require './app/models/user'
 require './app/app'
@@ -26,6 +27,7 @@ require 'simplecov'
 
 
 RSpec.configure do |config|
+  config.include SessionHelpers
 
 
   config.before(:suite) do
