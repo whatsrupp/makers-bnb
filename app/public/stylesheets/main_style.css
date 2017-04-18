@@ -7,7 +7,23 @@ body{
 
 }
 
-.property-index-frame{
-  width:
+.header {
+  width:100%;
+  height:10%;
+  background-color: grey;
+  opacity: 0.8;
 
+}
+
+.header-button {
+  float: right
+}
+
+.property-index-frame{
+  width: 80%;
+  opacity: 1;
+  background-color: green;
+  margin: auto;
+  padding: 1%;
+  margin-top: 5px;
 }
