@@ -3,6 +3,25 @@
 ### User stories:
 
 ```
+As a user
+So that I can use the website
+I want to sign up for an account
+```
+
+```
+As a user
+So that I can return to the website
+I want the functionality to log in
+```
+
+```
+As a user
+So that I can finish my session when I'm done
+I want the functionality to log out
+
+```
+
+```
 As a host
 So that potential guests can view the properties that I list
 I want to list a single property
