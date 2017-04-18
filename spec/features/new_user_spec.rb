@@ -1,9 +1,7 @@
 feature 'Creating new user' do
   scenario 'Creating new user increases number of users' do
-    visit 'users/new'
-    fill_in :email, with: 'hello@hello.com'
-    fill_in :password, with: 'password123'
-    click_button 'Register'
+    expect{sign_up}.to change(User, :count).by(1)
+    expect(current_path).to eq '/users'
     expect(page).to have_content "Welcome hello@hello.com"
   end
 end

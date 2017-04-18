@@ -6,6 +6,7 @@ class MakersBnB < Sinatra::Base
 
   post '/users' do
     @user = User.new(email: params[:email], password: params[:password])
+    @user.save
     erb :index
   end
 end
