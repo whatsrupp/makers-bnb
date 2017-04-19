@@ -12,3 +12,5 @@ require_relative 'controllers/user'
 require_relative 'controllers/sessions'
 require_relative 'controllers/requests'
 require_relative 'controllers/booking'
+require_relative 'controllers/about'
+
