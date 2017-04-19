@@ -1,18 +1,18 @@
-feature 'Displaying the saved properties' do
+feature 'Displaying the saved spaces' do
 
-  scenario 'Add multiple properties and see them listed' do
+  scenario 'Add multiple spaces and see them listed' do
 
-    add_new_property(name: "Rasta Pasta")
+    add_new_space(name: "Rasta Pasta")
     expect(page).to have_content "Rasta Pasta"
 
 
 
-    add_new_property(name: "Jerked Turk")
+    add_new_space(name: "Jerked Turk")
     expect(page).to have_content "Rasta Pasta"
     expect(page).to have_content "Jerked Turk"
 
 
-    add_new_property(name: "Roasty Toasty")
+    add_new_space(name: "Roasty Toasty")
     expect(page).to have_content "Rasta Pasta"
     expect(page).to have_content "Rasta Pasta"
     expect(page).to have_content "Rasta Pasta"
