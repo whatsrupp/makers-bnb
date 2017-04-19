@@ -3,12 +3,27 @@
 }
 
 body{
-
+  background-color: white;
 }
 
+.user-sign-up-container {
+  margin: auto;
+  width: 50%;
+  height: 40%;
+}
+
+.user-sign-up-form{
+  margin:auto;
+  width:80%;
+  height: 80%;
+}
+.form-item{
+  background-color: white;
+}
 .form-textbox{
   border:none;
   border-bottom: 2px solid red;
+  background-color:lightgrey;
 }
 
 .header {
