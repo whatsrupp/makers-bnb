@@ -5,7 +5,6 @@ feature 'create new booking' do
     fill_in :start_date, with: '15/09/2017'
     fill_in :end_date, with: '20/09/2017'
     click_on 'Book'
-    p current_path
     expect(page).to have_content('The Bakery has been booked')
   end
 end
