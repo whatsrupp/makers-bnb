@@ -20,4 +20,13 @@ feature 'Displaying the saved spaces' do
 
   end
 
+  scenario 'Click on space and go to its space page' do
+    name = "Roast and Toast"
+    add_new_space(name: name)
+    expect(page).to have_content name
+    click_link(name)
+    expect(current_path).to eq "/spaces/#{Space.first(name: name).id}"
+    expect(page.status_code).to eq(200)
+  end
+
 end
