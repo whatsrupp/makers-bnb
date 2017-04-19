@@ -9,9 +9,9 @@ class MakersBnB < Sinatra::Base
     @user = User.new(email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     if @user.save
       session[:id] = @user.id
-      redirect '/users/new'
+      redirect '/'
     else
-      return 'error'
+      flash.now[:errors] = @user.errors.full_messages
       erb :'users/new'
     end
   end
