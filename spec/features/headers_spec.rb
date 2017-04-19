@@ -25,7 +25,7 @@ feature 'Interacting with the header' do
       click_button 'sign-out-button'
       expect(current_path).to eq '/users/new'
       expect(page.status_code).to eq(200)
-      expect(page).to have_content "sign up"
+      expect(page).to have_content "Sign Up"
     end
   end
 
@@ -54,7 +54,7 @@ feature 'Interacting with the header' do
       click_link 'sign-up-link'
       expect(current_path).to eq '/users/new'
       expect(page.status_code).to eq(200)
-      expect(page).to have_content 'sign up'
+      expect(page).to have_content 'Sign Up'
     end
 
   end

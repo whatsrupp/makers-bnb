@@ -4,9 +4,14 @@
 
 body{
   background-color: white;
+  height: 100%;
+  width:100%;
 }
-
-.user-sign-up-container {
+.page-title{
+  text-align: center;
+}
+/*SIGN UP FORM*/
+.form-container {
   margin: auto;
   width: 50%;
   height: 40%;
@@ -23,19 +28,20 @@ body{
 .form-textbox{
   border:none;
   border-bottom: 2px solid red;
-  background-color:lightgrey;
+  background-color:white;
 }
-
-.header {
-  width:100%;
-  height:10%;
-  background-color: grey;
-  opacity: 0.8;
-
+.form-button{
+  width: 90%
 }
-
-.header-button {
-  float: right
+/*SPACES/INDEX*/
+.invisible-space-link{
+  text-decoration: none;
+  text-align: left;
+}
+.booking-link-button{
+  width:80%;
+  margin: auto;
+  text-align: center;
 }
 
 .space-index-frame{
@@ -43,9 +49,36 @@ body{
   opacity: 1;
   border:none;
   border-bottom: 2px solid red;
-
-  /*background-color: green;*/
   margin: auto;
   padding: 1%;
   margin-top: 5px;
+  text-align: center;
+}
+
+
+/*HEADERS*/
+
+#requests-link{
+  text-decoration: none;
+  color: red;
+}
+.header-link{
+  padding: 2%;
+  float: right;
+  list-style-type: none;
+
+}
+
+.header {
+  width:100%;
+  height:50px;
+  background-color: white;
+  border-bottom: 2px solid red;
+  opacity: 0.8;
+
+}
+
+
+.header-button {
+  float: right
 }

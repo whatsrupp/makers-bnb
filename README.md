@@ -3,18 +3,21 @@
 ### User stories:
 
 ```
+DONE
 As a user
 So that I can use the website
 I want to sign up for an account
 ```
 
 ```
+DONE
 As a user
 So that I can return to the website
 I want the functionality to log in
 ```
 
 ```
+DONE
 As a user
 So that I can finish my session when I'm done
 I want the functionality to log out
@@ -22,30 +25,35 @@ I want the functionality to log out
 ```
 
 ```
+DONE
 As a host
 So that potential guests can view the spaces that I list
 I want to list a single space
 ```
 
 ```
+DONE
 As a host
 So that I can offer more choice to potential guests
 I want to list multiple spaces
 ```
 
 ```
+DONE
 As a host
 So that potential guests can identify my space
 I want to give my listing a name
 ```
 
 ```
+DONE
 As a host
 So that potential guests can better understand my space
 I want to provide a description alongside my listing
 ```
 
 ```
+DONE
 As a host
 So that I can make money by listing my space
 I want to provide a nightly price for my listing
