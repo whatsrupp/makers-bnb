@@ -3,13 +3,14 @@
   <head>
     <title>MakersBnB</title>
 
-    <%= partial :signed_in_header %>
 
     <link rel="stylesheet" href="/stylesheets/test.css">
 
   </head>
 
   <body>
+    <%= partial :signed_in_header %>
+    
     Makers BnB
     <%= partial :welcome %>
     <%= yield %>
