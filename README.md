@@ -23,37 +23,37 @@ I want the functionality to log out
 
 ```
 As a host
-So that potential guests can view the properties that I list
-I want to list a single property
+So that potential guests can view the spaces that I list
+I want to list a single space
 ```
 
 ```
 As a host
 So that I can offer more choice to potential guests
-I want to list multiple properties
+I want to list multiple spaces
 ```
 
 ```
 As a host
-So that potential guests can identify my property
+So that potential guests can identify my space
 I want to give my listing a name
 ```
 
 ```
 As a host
-So that potential guests can better understand my property
+So that potential guests can better understand my space
 I want to provide a description alongside my listing
 ```
 
 ```
 As a host
-So that I can make money by listing my property
+So that I can make money by listing my space
 I want to provide a nightly price for my listing
 ```
 
 ```
 As a host
-So that potential guests can only book my property when I'm not there
+So that potential guests can only book my space when I'm not there
 I want my listings to have a range of available dates
 ```
 
@@ -77,6 +77,6 @@ I want to mark a space as booked
 
 ```
 As a host
-So that I can rent my property
+So that I can rent my space
 I want to ensure potential guests can request hire up until a space is marked as booked
 ```

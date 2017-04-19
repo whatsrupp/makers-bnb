@@ -1,0 +1,28 @@
+<h1>Space Added</h1>
+
+<body>
+
+  <%if !@spaces.empty?%>
+    <%@spaces.each do |space|%>
+
+      <div class='space-index-frame'>
+        <div class='space-info' id='name'>
+          Space Name: <%=space.name %>
+        </div>
+
+        <div class='space-info' id='location'>
+          Location: <%=space.location %>
+        </div>
+        <div class='space-info' id='price'>
+          Price: <%=space.price %>
+
+        </div>
+        <div class='space-info' id='description'>
+          Description: <%=space.description %>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+
+
+</body>
