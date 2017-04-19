@@ -1,6 +1,7 @@
 class MakersBnB < Sinatra::Base
 
   enable :sessions
+  register Sinatra::Flash
   register Sinatra::Partial
   use Rack::MethodOverride
   enable :partial_underscores
