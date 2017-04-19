@@ -2,13 +2,13 @@ feature 'Interacting with the header' do
 
   describe 'Context: User is signed in' do
 
-    scenario 'user navigates to the properties index page' do
+   scenario 'user navigates to the spaces index page' do
       sign_up
       visit '/'
-      click_link 'properties-link'
-      expect(current_path).to eq '/properties/index'
+      click_link 'spaces-link'
+      expect(current_path).to eq '/spaces/index'
       expect(page.status_code).to eq(200)
-      expect(page).to have_content 'Properties'
+      expect(page).to have_content 'Spaces'
       expect(page).not_to have_content 'Login'
     end
 

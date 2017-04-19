@@ -1,4 +1,4 @@
-class Property
+class Space
 
   include DataMapper::Resource
 

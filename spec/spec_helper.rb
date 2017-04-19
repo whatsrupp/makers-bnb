@@ -24,11 +24,11 @@ require 'simplecov'
 # SimpleCov.start
 
 require_relative 'helpers/session'
-require_relative 'helpers/new_property'
+require_relative 'helpers/new_space'
 
 RSpec.configure do |config|
   config.include SessionHelpers
-  config.include NewPropertyHelpers
+  config.include NewSpaceHelpers
 
 
   config.before(:suite) do
