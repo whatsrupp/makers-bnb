@@ -20,4 +20,10 @@ class MakersBnB<Sinatra::Base
     erb :'spaces/index'
   end
 
+  get '/spaces/:id' do
+    @space= Space.first(id: params[:id])
+    erb :'spaces/id'
+  end
+
+
 end

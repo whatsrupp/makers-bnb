@@ -4,28 +4,30 @@
 
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>
-
       <div class='space-index-frame'>
-        <div class='space-info' id='name'>
-          Space Name: <%=space.name %>
-        </div>
+        <a class='invisible-space-link' id='<%=space.name%>' href='/spaces/<%=Space.first(name: "#{space.name}").id%>'>
+          <div class='space-info' id='name'>
+            Space Name: <%=space.name %>
+          </div>
 
-        <div class='space-info' id='location'>
-          Location: <%=space.location %>
-        </div>
-        <div class='space-info' id='price'>
-          Price: <%=space.price %>
-
-        </div>
-        <div class='space-info' id='description'>
-          Description: <%=space.description %>
-        </div>
-        <form action='/booking/new' method='get'>
-          <button type="submit" value="Book">Book</button>
-        </form>
-      </div>
+          <div class='space-info' id='location'>
+            Location: <%=space.location %>
+          </div>
+          
+          <div class='space-info' id='price'>
+            Price: <%=space.price %>
+          </div>
+          
+          <div class='space-info' id='description'>
+            Description: <%=space.description %>
+          </div>
+          
+          <form action='/booking/new' method='get'>
+            <button type="submit" value="Book">Book</button>
+          </form>
+        </a>
+       </div>   
     <%end%>
   <%end%>
-
 
 </body>
