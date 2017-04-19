@@ -5,19 +5,21 @@ feature 'Displaying the saved spaces' do
     add_new_space(name: "Rasta Pasta")
     expect(page).to have_content "Rasta Pasta"
 
-
-
     add_new_space(name: "Jerked Turk")
     expect(page).to have_content "Rasta Pasta"
     expect(page).to have_content "Jerked Turk"
-
 
     add_new_space(name: "Roasty Toasty")
     expect(page).to have_content "Rasta Pasta"
     expect(page).to have_content "Rasta Pasta"
     expect(page).to have_content "Rasta Pasta"
+  end
 
-
+  scenario 'Can navigate to new space page' do
+    visit '/spaces/index'
+    click_button 'new-spaces-button'
+    expect(current_path).to eq '/spaces/new'
+    expect(page.status_code).to eq(200)
   end
 
   scenario 'Click on space and go to its space page' do

@@ -2,6 +2,11 @@
 <body>
   <h1 class='page-title'>Space Added</h1>
 
+  <form action='/spaces/new' method='get' >
+    <input type='submit' id='new-spaces-button' value='Add new space'>
+  </form>
+
+
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>
       <div class='space-index-frame'>
@@ -22,10 +27,12 @@
             Description: <%=space.description %>
           </div>
 
+
         </a>
         <form action='/booking/new' method='get'>
           <button class='booking-link-button' type="submit" value="Book">Book</button>
         </form>
+
        </div>
     <%end%>
   <%end%>
