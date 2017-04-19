@@ -1,10 +1,11 @@
 feature 'Interacting with the header' do
 
   describe 'Context: User is signed in' do
+    before(:each) do
+      sign_up
+    end
 
    scenario 'user navigates to the spaces index page' do
-      sign_up
-      visit '/'
       click_link 'spaces-link'
       expect(current_path).to eq '/spaces/index'
       expect(page.status_code).to eq(200)
@@ -13,8 +14,6 @@ feature 'Interacting with the header' do
     end
 
     scenario 'user navigates to the requests page' do
-      sign_up
-      visit '/'
       click_link 'requests-link'
       expect(current_path).to eq '/requests/index'
       expect(page.status_code).to eq(200)
@@ -22,6 +21,12 @@ feature 'Interacting with the header' do
       expect(page).not_to have_content 'Login'
     end
 
+    scenario 'user can log out from the header' do
+      click_button 'sign-out-button'
+      expect(current_path).to eq '/users/new'
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content "sign up"
+    end
   end
 
   describe 'Context: User is signed out' do
@@ -31,7 +36,7 @@ feature 'Interacting with the header' do
       click_link 'login-link'
       expect(current_path).to eq '/sessions/new'
       expect(page.status_code).to eq(200)
-      expect(page).to have_content 'sign in'
+      expect(page).to have_content 'Sign In'
       expect(page).not_to have_content 'Requests'
     end
 
@@ -42,6 +47,14 @@ feature 'Interacting with the header' do
       expect(page.status_code).to eq(200)
       expect(page).to have_content 'About Us'
       expect(page).not_to have_content 'Requests'
+    end
+
+    scenario 'User goes to the sign up page' do
+      visit '/sessions/new'
+      click_link 'sign-up-link'
+      expect(current_path).to eq '/users/new'
+      expect(page.status_code).to eq(200)
+      expect(page).to have_content 'sign up'
     end
 
   end
