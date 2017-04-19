@@ -1,8 +1,8 @@
 feature 'Creating new user' do
   scenario 'Creating new user increases number of users' do
-    expect{sign_up}.to change(User, :count).by(1)
+    expect{sign_up(email: "brick@roll.com")}.to change(User, :count).by(1)
     expect(current_path).to eq '/'
-    expect(page).to have_content "Welcome, test@test.com"
+    expect(page).to have_content "Welcome, brick@roll.com "
   end
 
   scenario "with an invalid email address" do
