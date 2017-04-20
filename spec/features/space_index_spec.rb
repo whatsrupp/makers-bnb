@@ -1,7 +1,10 @@
 feature 'Displaying the saved spaces' do
 
-  scenario 'Add multiple spaces and see them listed' do
+  before(:each) do
     sign_up
+  end
+
+  scenario 'Add multiple spaces and see them listed' do
     add_new_space(name: "Rasta Pasta")
     expect(page).to have_content "Rasta Pasta"
 
@@ -23,7 +26,6 @@ feature 'Displaying the saved spaces' do
   end
 
   scenario 'Click on space and go to its space page' do
-    sign_up
     name = "Roast and Toast"
     add_new_space(name: name)
     expect(page).to have_content name
@@ -50,6 +52,7 @@ feature 'Displaying the saved spaces' do
     expect(page).not_to have_content('Chilli Curry')
     expect(page).not_to have_content('Fish and Chips')
   end
+
 
   scenario 'User can order spaces by price' do
     sign_up
