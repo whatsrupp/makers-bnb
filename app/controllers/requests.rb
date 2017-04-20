@@ -21,4 +21,9 @@ class MakersBnB < Sinatra::Base
     flash.keep[:requests]=Space.first(id: space_id).name
     redirect '/spaces/index'
   end
+
+  get '/requests/:id' do
+    @request = Request.first(id: params[:id])
+    erb :'requests/id'
+  end
 end
