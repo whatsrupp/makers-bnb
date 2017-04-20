@@ -51,11 +51,19 @@ body{
 .invisible-space-link{
   text-decoration: none;
   text-align: left;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.invisible-space-link:hover{
+  font-size: 40px;
+
 }
 .booking-link-button{
   width:80%;
   margin: auto;
   text-align: center;
+
 }
 
 .space-index-frame{
@@ -76,10 +84,7 @@ body{
   text-decoration: none;
   color: green
 }
-#requests-link{
-  text-decoration: none;
-  color: red;
-}
+
 .header-link{
   padding: 2%;
   float: right;
