@@ -62,9 +62,20 @@ body{
 .booking-link-button{
   width:80%;
   margin: auto;
-  text-align: center;
+  text-align:center;
+  background-color:white;
+  border: 2px solid red;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.booking-link-button:hover{
+  width:80%;
+  margin:auto;
+  background-color: red; /* Green */
+  color: white;
 
 }
+
 
 .space-index-frame{
   width: 60%;
