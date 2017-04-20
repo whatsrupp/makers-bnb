@@ -66,6 +66,22 @@ feature 'Displaying the saved spaces' do
 
   end
 
+  scenario 'Users can search spaces by city' do
+    add_new_space(name: "Roasty Toasty", location: 'London')
+    add_new_space(name: "Rasta Pasta", location: 'London')
+    add_new_space(name: "Posh Nosh", location: 'Paris')
+    add_new_space(name: "Chilli Curry", location: 'Manchester')
+    add_new_space(name: "Fish and Chips", location: 'Manchester')
 
+    fill_in :'filter-location-search', with: 'London'
+    click_on 'Search'
+
+    expect(page.status_code).to eq(200)
+    expect(page).to have_content('Roasty Toasty')
+    expect(page).to have_content('Rasta Pasta')
+    expect(page).not_to have_content('Posh Nosh')
+    expect(page).not_to have_content('Chilli Curry')
+    expect(page).not_to have_content('Fish and Chips')
+  end
 
 end

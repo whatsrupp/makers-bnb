@@ -1,9 +1,16 @@
 
 <body>
-  <h1 class='page-title'>Space Added</h1>
+  <h1 class='page-title'>Available Spaces</h1>
 
   <form action='/spaces/new' method='get' >
     <input type='submit' id='new-spaces-button' value='Add new space'>
+  </form>
+
+  <form action='/filter' method='post' >
+    <label for='city'>
+      Search by city:<input type='text' id='filter-location-search' name='location'>
+      <input type='submit' id='filter-location-button' value='Search'>
+    </label>
   </form>
 
 
