@@ -2,7 +2,7 @@ feature 'Creating new user' do
   scenario 'Creating new user increases number of users' do
     expect{sign_up(email: "brick@roll.com")}.to change(User, :count).by(1)
     expect(current_path).to eq '/spaces/index'
-    expect(page).to have_content "Welcome, brick@roll.com "
+    expect(page).to have_content "brick@roll.com "
   end
 
   scenario "with an invalid email address" do
@@ -34,7 +34,7 @@ feature 'User sign in' do
   scenario 'with correct credentials' do
     sign_up(email: 'test@test.com', password: 'password', password_confirmation: 'password')
     sign_in(email: 'test@test.com',   password: 'password')
-    expect(page).to have_content "Welcome, test@test.com"
+    expect(page).to have_content "test@test.com"
   end
 end
 
