@@ -5,7 +5,7 @@ feature 'Interacting with the header' do
       sign_up
     end
 
-   scenario 'user navigates to the spaces index page' do
+    scenario 'user navigates to the spaces index page' do
       click_link 'spaces-link'
       expect(current_path).to eq '/spaces/index'
       expect(page.status_code).to eq(200)
