@@ -67,6 +67,7 @@ feature 'Displaying the saved spaces' do
   end
 
   scenario 'Users can search spaces by city' do
+    sign_up
     add_new_space(name: "Roasty Toasty", location: 'London')
     add_new_space(name: "Rasta Pasta", location: 'London')
     add_new_space(name: "Posh Nosh", location: 'Paris')
