@@ -1,15 +1,15 @@
-<h1>Welcome. Please sign up below</h1>
-<div class='user-sign-up-container'>
-<form class='form' id='user-sign-up-form' action='/users' method='post'>
-  <div class='form-item'>
-    Email:<input class= 'form-textbox' id='email' type='email' name='email' value='<%= @user.email %>' required>
-  </div>
-  <div class='form-item'>
-    Password:<input class='form-textbox' type='password' name='password' id='password'>
-  </div>
-  <div class='form-item'>
-    Confirm Password:<input class='form-textbox' type='password' name='password_confirmation' required>
-  </div>
-  <input class='form-button'type='submit' value='Register'>
-</form>
+<h1 class='page-title'>Sign Up</h1>
+<div class='form-container'>
+  <form class='form' id='user-sign-up-form' action='/users' method='post'>
+    <div class='form-item'>
+      Email:<input class= 'form-textbox' id='email' type='email' name='email' value='<%= @user.email %>' required>
+    </div>
+    <div class='form-item'>
+      Password:<input class='form-textbox' type='password' name='password' id='password'>
+    </div>
+    <div class='form-item'>
+      Confirm Password:<input class='form-textbox' type='password' name='password_confirmation' required>
+    </div>
+    <button class='form-button'type='submit' id='Register'>Register</button>
+  </form>
 </div>

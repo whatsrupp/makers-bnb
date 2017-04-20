@@ -1,23 +1,23 @@
-<html>
-  <body>
-    <form class='form' id='new-space-form' action='/spaces/new' method="post">
-      <label class='form-label'>
-        Name:<input class='form-textbox' type='text' id='space-name' name='name'>
-      </label>
 
-      <label class='form-label'>
-        Location:<input class='form-textbox' type='text' id='space-location' name='location'>
-      </label>
+<h1 class='page-title'>Add New Space</h1>
+<div class='form-container'>
+  <form class='form' id='new-space-form' action='/spaces/new' method="post">
+    <div class='form-item'>
+      Name:<input class='form-textbox' type='text' id='space-name' name='name'>
+    </div>
 
-      <label class='form-label'>
-        Price:<input class='form-textbox' type='text' id='space-price' name='price'>
-      </label>
+    <div class='form-item'>
+      Location:<input class='form-textbox' type='text' id='space-location' name='location'>
+    </div>
 
-      <label class='form-label'>
-        Description:<input class='form-textbox' type='text' id='space-description' name='description'>
-      </label>
+    <div class='form-item'>
+      Price:<input class='form-textbox' type='text' id='space-price' name='price'>
+    </div>
 
-      <input type='submit' id='submit-button' class='form-button' value='Submit'>
-    </form>
-  </body>
-</html>
+    <div class='form-item'>
+      Description:<input class='form-textbox' type='text' id='space-description' name='description'>
+    </div>
+
+    <input type='submit' id='submit-button' class='form-button' value='Submit'>
+  </form>
+</div>

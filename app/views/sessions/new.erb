@@ -1,15 +1,13 @@
-<h1>Please Sign In</h1>
+<h1 class='page-title'>Please Sign In</h1>
+<div class='form-container'>
+  <form action='/sessions' method='post'>
+    <div class='form-item'>
+        Email:<input class='form-textbox'type="email" name="email">
+    </div>
+    <div class='form-item'>
+        Password: <input class='form-textbox' type="password" name="password">
+    </div>
 
-<form action='/sessions' method='post'>
-  <label for="email" >
-    Email:
-      <input type="email" name="email">
-  </label>
-
-  <label for="password">
-    Password:
-    <input type="password" name="password">
-  </label>
-
-  <button type="submit" value="Sign in">Log in</button>
-</form>
+    <button class='form-button' type="submit" id='Sign In'>Log in</button>
+  </form>
+</div>
