@@ -12,12 +12,15 @@ class MakersBnB<Sinatra::Base
     description = params[:description]
     start_date = params[:'start date']
     end_date = params[:'end date']
+
+    user_id = current_user.id
     @space = Space.new(name: name,
                       location: location,
                       price: price,
                       description: description,
                       start_date: start_date,
-                      end_date: end_date)
+                      end_date: end_date,
+                      user_id: user_id)
     @space.save
     redirect '/spaces/index'
   end

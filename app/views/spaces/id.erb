@@ -22,3 +22,12 @@
   </div>
 
 </div>
+
+<div class='calendar'>
+  <form action='/requests/new' method='post'>
+    <input type='date' name="start_date">
+    <input type='date' name="end_date">
+    <input type='hidden' name='id' value='<%=@space.id%>'>
+    <button type="submit" id='request-button' value="Request">Request</button>
+  </form>
+</div>
