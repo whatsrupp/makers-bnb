@@ -13,10 +13,13 @@
     </label>
   </form>
 
-  <form action='/filter/price' method='get'>
-    <input type='submit' id='filter-price-button' value='Filter by Price'>
+  <form action='/filter/price-high' method='get'>
+    <input type='submit' id='filter-high-price-button' value='Filter by Highest Price' name='high'>
   </form>
 
+  <form action='/filter/price-low' method='get'>
+    <input type='submit' id='filter-low-price-button' value='Filter by Lowest Price' name='low'>
+  </form>
 
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>

@@ -9,7 +9,13 @@ class MakersBnB < Sinatra::Base
     redirect "/filter/#{@city}"
   end
 
-  get '/filter/price' do
+  get '/filter/price-high' do
+    filter = Space.all
+    @spaces = filter.sort_by { |space| space.price.to_i }.reverse
+    erb :'spaces/index'
+  end
+
+  get '/filter/price-low' do
     filter = Space.all
     @spaces = filter.sort_by { |space| space.price.to_i }
     erb :'spaces/index'

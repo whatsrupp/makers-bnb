@@ -58,10 +58,10 @@ feature 'Displaying the saved spaces' do
     add_new_space(name: "Posh Nosh", price: '30')
     add_new_space(name: "Chilli Curry", price: '1')
 
-    click_on 'Filter by Price'
+    click_on 'Filter by Highest Price'
 
     expect(page.status_code).to eq(200)
-    expect(current_path).to eq'/filter/price'
+    expect(current_path).to eq'/filter/price-high'
     expect(page).to have_content("Chilli Curry")
 
   end
