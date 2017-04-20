@@ -30,9 +30,23 @@ body{
   border-bottom: 2px solid red;
   background-color:white;
 }
-.form-button{
-  width: 90%
+
+.form-button {
+    width:90%;
+    text-align:center;
+    background-color:white;
+    border: 2px solid red;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
 }
+
+.form-button:hover {
+    width:90%;
+    background-color: red; /* Green */
+    color: white;
+}
+
+
 /*SPACES/INDEX*/
 .invisible-space-link{
   text-decoration: none;
@@ -58,6 +72,10 @@ body{
 
 /*HEADERS*/
 
+.links{
+  text-decoration: none;
+  color: green
+}
 #requests-link{
   text-decoration: none;
   color: red;

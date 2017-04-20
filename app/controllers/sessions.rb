@@ -5,7 +5,6 @@ class MakersBnB < Sinatra::Base
 
   post '/sessions' do
     user = User.authenticate(params[:email], params[:password])
-
     if user
       session[:id] = user.id
       redirect '/'
@@ -16,6 +15,7 @@ class MakersBnB < Sinatra::Base
   end
 
   delete '/sessions' do
+
     session[:id] = nil
     flash.keep[:notice] = 'goodbye!'
     redirect to '/users/new'
