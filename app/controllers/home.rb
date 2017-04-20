@@ -1,7 +1,7 @@
 class MakersBnB<Sinatra::Base
 
   get '/' do
-    erb :index
+    redirect '/users/new'
   end
 
 end

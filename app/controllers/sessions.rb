@@ -7,7 +7,7 @@ class MakersBnB < Sinatra::Base
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:id] = user.id
-      redirect '/'
+      redirect '/spaces/index'
     else
       flash.now[:errors] = ['The email or password is incorrect']
       erb :'sessions/new'
