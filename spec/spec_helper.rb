@@ -25,11 +25,12 @@ require 'simplecov'
 
 require_relative 'helpers/session'
 require_relative 'helpers/new_space'
+require_relative 'helpers/request'
 
 RSpec.configure do |config|
   config.include SessionHelpers
   config.include NewSpaceHelpers
-
+  config.include RequestHelpers
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

@@ -10,3 +10,7 @@
     <% end %>
   </ul>
 <% end %>
+
+<% if flash[:requests] %>
+  <div id='notice'><%=flash[:requests]%> requested</div>
+<% end %>

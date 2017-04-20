@@ -8,6 +8,9 @@ attr_accessor :password_confirmation
 
   include DataMapper::Resource
 
+  has n, :spaces
+  has n, :requests
+
   property :id,               Serial
   property :text,             String, length: 255
   property :email,            String, format: :email_address, required: true, unique: true
