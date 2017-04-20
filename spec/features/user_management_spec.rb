@@ -1,7 +1,7 @@
 feature 'Creating new user' do
   scenario 'Creating new user increases number of users' do
     expect{sign_up(email: "brick@roll.com")}.to change(User, :count).by(1)
-    expect(current_path).to eq '/'
+    expect(current_path).to eq '/spaces/index'
     expect(page).to have_content "Welcome, brick@roll.com "
   end
 
