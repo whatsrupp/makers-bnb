@@ -13,20 +13,21 @@
           <div class='space-info' id='location'>
             Location: <%=space.location %>
           </div>
-          
+
           <div class='space-info' id='price'>
             Price: <%=space.price %>
           </div>
-          
+
           <div class='space-info' id='description'>
             Description: <%=space.description %>
           </div>
-          
-          <form action='/booking/new' method='get'>
-            <button type="submit" value="Book">Book</button>
+
+          <form action='/booking/new' method='post'>
+            <input type="hidden" name='id' value="<%=space.id%>">
+            <input type="submit" value="Book" id="Book">
           </form>
         </a>
-       </div>   
+       </div>
     <%end%>
   <%end%>
 

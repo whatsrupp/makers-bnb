@@ -4,10 +4,14 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/booking/new' do
-    redirect '/booking'
+    @space = Space.first(id: params[:id])
+    redirect '/booking/new'
   end
 
-  get '/booking' do
+  post '/booking' do
+    @space.booking = Booking.create(start_date: params[:start_date], end_date: params[:end_date])
+    @space.save
+    require 'pry'; binding.pry
     erb :'booking/index'
   end
 end
