@@ -11,8 +11,8 @@ feature 'Displaying the saved spaces' do
 
     add_new_space(name: "Roasty Toasty")
     expect(page).to have_content "Rasta Pasta"
-    expect(page).to have_content "Rasta Pasta"
-    expect(page).to have_content "Rasta Pasta"
+    expect(page).to have_content "Jerked Turk"
+    expect(page).to have_content "Roasty Toasty"
   end
 
   scenario 'Can navigate to new space page' do
@@ -30,5 +30,40 @@ feature 'Displaying the saved spaces' do
     expect(current_path).to eq "/spaces/#{Space.first(name: name).id}"
     expect(page.status_code).to eq(200)
   end
+
+  scenario 'Can filter spaces by city' do
+    add_new_space(name: "Roasty Toasty", location: 'London')
+    add_new_space(name: "Rasta Pasta", location: 'London')
+    add_new_space(name: "Posh Nosh", location: 'Paris')
+    add_new_space(name: "Chilli Curry", location: 'Manchester')
+    add_new_space(name: "Fish and Chips", location: 'Manchester')
+
+    visit '/filter/London'
+    expect(page.status_code).to eq(200)
+    expect(page).to have_content('Roasty Toasty')
+    expect(page).to have_content('Rasta Pasta')
+    expect(page).not_to have_content('Posh Nosh')
+    expect(page).not_to have_content('Chilli Curry')
+    expect(page).not_to have_content('Fish and Chips')
+
+    visit '/filter/Paris'
+    expect(page.status_code).to eq(200)
+    expect(page).not_to have_content('Roasty Toasty')
+    expect(page).not_to have_content('Rasta Pasta')
+    expect(page).to have_content('Posh Nosh')
+    expect(page).not_to have_content('Chilli Curry')
+    expect(page).not_to have_content('Fish and Chips')
+
+    visit '/filter/Manchester'
+    expect(page.status_code).to eq(200)
+    expect(page).not_to have_content('Roasty Toasty')
+    expect(page).not_to have_content('Rasta Pasta')
+    expect(page).not_to have_content('Posh Nosh')
+    expect(page).to have_content('Chilli Curry')
+    expect(page).to have_content('Fish and Chips')
+
+  end
+
+
 
 end
