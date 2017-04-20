@@ -32,40 +32,6 @@ feature 'Displaying the saved spaces' do
     expect(page.status_code).to eq(200)
   end
 
-  scenario 'Can filter spaces by city' do
-    sign_up
-    add_new_space(name: "Roasty Toasty", location: 'London')
-    add_new_space(name: "Rasta Pasta", location: 'London')
-    add_new_space(name: "Posh Nosh", location: 'Paris')
-    add_new_space(name: "Chilli Curry", location: 'Manchester')
-    add_new_space(name: "Fish and Chips", location: 'Manchester')
-
-    visit '/filter/London'
-    expect(page.status_code).to eq(200)
-    expect(page).to have_content('Roasty Toasty')
-    expect(page).to have_content('Rasta Pasta')
-    expect(page).not_to have_content('Posh Nosh')
-    expect(page).not_to have_content('Chilli Curry')
-    expect(page).not_to have_content('Fish and Chips')
-
-    visit '/filter/Paris'
-    expect(page.status_code).to eq(200)
-    expect(page).not_to have_content('Roasty Toasty')
-    expect(page).not_to have_content('Rasta Pasta')
-    expect(page).to have_content('Posh Nosh')
-    expect(page).not_to have_content('Chilli Curry')
-    expect(page).not_to have_content('Fish and Chips')
-
-    visit '/filter/Manchester'
-    expect(page.status_code).to eq(200)
-    expect(page).not_to have_content('Roasty Toasty')
-    expect(page).not_to have_content('Rasta Pasta')
-    expect(page).not_to have_content('Posh Nosh')
-    expect(page).to have_content('Chilli Curry')
-    expect(page).to have_content('Fish and Chips')
-
-  end
-
   scenario 'Users can search spaces by city' do
     sign_up
     add_new_space(name: "Roasty Toasty", location: 'London')
@@ -83,6 +49,21 @@ feature 'Displaying the saved spaces' do
     expect(page).not_to have_content('Posh Nosh')
     expect(page).not_to have_content('Chilli Curry')
     expect(page).not_to have_content('Fish and Chips')
+  end
+
+  scenario 'User can order spaces by price' do
+    sign_up
+    add_new_space(name: "Roasty Toasty", price: '10')
+    add_new_space(name: "Rasta Pasta", price: '200')
+    add_new_space(name: "Posh Nosh", price: '30')
+    add_new_space(name: "Chilli Curry", price: '1')
+
+    click_on 'Filter by Price'
+
+    expect(page.status_code).to eq(200)
+    expect(current_path).to eq'/filter/price'
+    expect(page).to have_content("Chilli Curry")
+
   end
 
 end
