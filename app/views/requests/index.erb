@@ -1,26 +1,39 @@
-<h1 class='page-title'> Requests </h1>
-<h2>You have sent!!!!!!</h2>
-<% if !@requests.empty? %>
-  <% @requests.each do |request| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Requests</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+
+    <h2>Your Requests</h2>
+    <% if !@requests.empty? %>
+    <% @requests.each do |request| %>
     <a class='request-invisible-link' id='<%= "Request-ID-#{request.id}"%>' href='/requests/<%= request.id %>'>
       <%= Space.first(id: request.space_id).name %>
       <%= Space.first(id: request.space_id).booked? %>
       <%= request.start_date %>
       <%= request.end_date %>
     </a>
-  <% end %>
-<% end %>
-
-<h2>Incoming!</h2>
-<% if !@spaces.empty? %>
-  <% @spaces.each do |space| %>
-    <% Request.all.select{|request| request if request[:space_id]==space.id}.each do |request| %>
-      <a class='request-invisible-link' id='<%="Request-ID-#{request.id}" %>' href='/requests/<%=request.id%>'>
-        <%= space.name %>
-        <%= space.booked?%>
-        <%= request.start_date %>
-        <%= request.end_date %>
-      </a>
     <% end %>
-  <% end %>
-<% end %>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+
+    <% if !@spaces.empty? %>
+    <% @spaces.each do |space| %>
+    <h2>Received Requests</h2>
+    <% Request.all.select{|request| request if request[:space_id]==space.id}.each do |request| %>
+    <a class='request-invisible-link' id='<%="Request-ID-#{request.id}" %>' href='/requests/<%=request.id%>'>
+      <%= space.name %>
+      <%= space.booked?%>
+      <%= request.start_date %>
+      <%= request.end_date %>
+    </a>
+    <% end %>
+    <% end %>
+    <% end %>
+
+  </div>
+</div>

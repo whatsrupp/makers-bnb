@@ -9,6 +9,7 @@
   </head>
 
   <body >
+    <div class="container-fluid">
 
     <% if current_user %>
       <%= partial :signed_in_header %>
@@ -18,5 +19,6 @@
     <%= partial :flash %>
     <%= yield %>
 
+    </div>
   </body>
 </html>
