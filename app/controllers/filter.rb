@@ -21,7 +21,4 @@ class MakersBnB < Sinatra::Base
     erb :'spaces/index'
   end
 
-
-
-
 end
