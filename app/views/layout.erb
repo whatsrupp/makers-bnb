@@ -10,14 +10,10 @@
   <body>
 
     <% if current_user %>
-        <%= partial :signed_in_header %>
-      <% else %>
-        <%= partial :signed_out_header %>
-      <% end %>
-
-    Makers BnB
-    <%= partial :welcome_new_user %>
-    <%= partial :welcome %>
+      <%= partial :signed_in_header %>
+    <% else %>
+      <%= partial :signed_out_header %>
+    <% end %>
     <%= partial :flash %>
     <%= yield %>
 

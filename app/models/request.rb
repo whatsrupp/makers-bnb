@@ -5,7 +5,7 @@ include DataMapper::Resource
   belongs_to :user
 
   property :id, Serial
-  property :requested_start, Date
-  property :requested_end, Date
+  property :start_date, Date
+  property :end_date, Date
 
 end
