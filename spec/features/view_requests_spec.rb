@@ -8,13 +8,17 @@ feature 'Viewing requests' do
   end
 
   scenario 'User can view all requests for their space' do
-    sign_up(email: 'woody@wood.com')
-    add_new_space(name: "Rasta Pasta")
+    space_name = "Rasta Pasta"
+    owner_email = 'rick@roll.com'
+    requester_email = 'hasan@sultan.com'
+    sign_up(email: owner_email)
+    add_new_space(name: space_name)
     click_button('sign-out-button')
-    submit_request(name: "Rasta Pasta")
+
+    submit_request(requester_email: requester_email, space_name: space_name)
     click_button('sign-out-button')
-    sign_in(email: 'woody@wood.com')
+    sign_in(email: owner_email)
     visit '/requests/index'
-    expect(page).to have_content 'Rasta Pasta'
+    expect(page).to have_content space_name
   end
 end
