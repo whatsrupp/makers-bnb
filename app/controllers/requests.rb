@@ -25,10 +25,25 @@ class MakersBnB < Sinatra::Base
   post '/requests/confirm' do
 
     flash.keep[:confirmations]= "Space Booking Confirmed"
-
+    request = Request.first(id: params[:'request-id'])
+    Space.first(id: request.space_id ).update(:booked => true)
     Request.first(id: params[:'request-id']).update(:confirmed => true)
+
+    requests = Request.all.select {|request| request if request[:space_id] == request.space_id && request[:confirmed]==false}
+    requests.map{|request| Request.first(id: request.id).update(:active => false)}
+
+
     redirect('/requests/index')
   end
+
+  post '/requests/deny' do
+    flash.keep[:confirmations]= "Space Booking Rejected"
+    Request.first(id: params[:'request-id']).update(:active=> false)
+    redirect('/requests/index')
+
+  end
+
+
   get '/requests/:id' do
     @request_id=params[:id]
     erb :'requests/id'

@@ -13,6 +13,6 @@ class Space
   property :description,  String, :length => 255
   property :start_date,   Date, :required => true
   property :end_date,     Date, :required => true
-  property :booked?,      Boolean, :default => false
+  property :booked,      Boolean, :default => false
 
 end
