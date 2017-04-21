@@ -1,22 +1,38 @@
 
 <body>
-  <h1 class='page-title'>Available Spaces</h1>
+  <div class='jumbotron text-center'>
+    <h1 class='page-title'>Available Spaces</h1>
 
-  <form action='/spaces/new' method='get' >
-    <input type='submit' id='new-spaces-button' value='Add new space'>
-  </form>
+    <p>
+      <form action='/spaces/new' method='get' >
+      <input class='btn btn-lg btn-success' type='submit' id='new-spaces-button' value='Add new space'>
+    </form>
+    </p>
+  </div>
 
-  <form action='/filter' method='post' >
-    <label for='city'>
-      Search by city:<input type='text' id='filter-location-search' name='location'>
-      <input type='submit' id='filter-location-button' value='Search'>
-    </label>
-  </form>
-
+<div class='container col-8'>
+  <div class='row'>
+    <div class='text-center'>
+      <div id='imaginary container'>
+        <div class='input-group stylist-input-group'>
+          <form action='/filter' method='post' >
+            <input type='text' class='form-control' id='filter-location-search' name='location' placeholder='Filter by city'>
+            <span class='input-group-addon'>
+              <button type='submit' id='filter-location-button' value='Search'>
+                <span class='glyphicon glyphicon-search'>
+                </span>
+              </button>
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>
-      <div class='space-index-frame'>
+      <div class='space-index-frame col-lg-3'>
         <a class='invisible-space-link' id='<%=space.name%>' href='/spaces/<%=Space.first(name: "#{space.name}").id%>'>
           <div class='space-info' id='name'>
             Space Name: <%=space.name %>
@@ -44,7 +60,7 @@
 
         </a>
         <form action='/booking/new' method='get'>
-          <button class='booking-link-button' type="submit" value="Book">Book</button>
+          <button class='btn btn-default booking-link-button' type="submit" value="Book">Book</button>
         </form>
 
        </div>
