@@ -34,7 +34,7 @@ feature 'Displaying the saved spaces' do
     expect(page.status_code).to eq(200)
   end
 
-  scenario 'Users can search spaces by city' do
+  scenario 'Users can filter spaces by city' do
     sign_up
     add_new_space(name: "Roasty Toasty", location: 'London')
     add_new_space(name: "Rasta Pasta", location: 'London')
@@ -43,7 +43,7 @@ feature 'Displaying the saved spaces' do
     add_new_space(name: "Fish and Chips", location: 'Manchester')
 
     fill_in :'filter-location-search', with: 'London'
-    click_on 'Search'
+    click_on :'filter'
 
     expect(page.status_code).to eq(200)
     expect(page).to have_content('Roasty Toasty')
