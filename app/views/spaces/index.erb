@@ -13,6 +13,10 @@
     </label>
   </form>
 
+  <form action='/filter/price' method='get'>
+    <input type='submit' id='filter-price-button' value='Filter by Price'>
+  </form>
+
 
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>
