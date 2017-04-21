@@ -8,4 +8,5 @@ include DataMapper::Resource
   property :start_date, Date
   property :end_date, Date
   property :confirmed, Boolean, :default => false
+  property :active, Boolean, :default => true
 end

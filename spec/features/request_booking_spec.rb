@@ -28,4 +28,6 @@ feature 'create new booking' do
 
   end
 
+
+
 end

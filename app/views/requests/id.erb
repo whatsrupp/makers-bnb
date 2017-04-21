@@ -1,5 +1,10 @@
 
 <form action='/requests/confirm' method='post'>
-  <input type='hidden' name='request-id' value="<%=@request_id%>"">
+  <input type='hidden' name='request-id' value="<%=@request_id%>">
   <input type='submit'  id='confirm-request' value= "confirm-request">
+</form>
+
+<form action='/requests/deny' method='post'>
+  <input type='hidden' name='request-id' value="<%=@request_id%>">
+  <input type='submit'  id='deny-request' value= "deny-request">
 </form>
