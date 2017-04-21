@@ -1,10 +1,18 @@
 module RequestHelpers
-  def submit_request
+  def make_space_and_submit_request(name: 'WAGWAN', start_date: '15/09/2017', end_date: '20/09/2017')
     sign_up
-    add_new_space(name: 'WAGWAN')
-    click_on 'WAGWAN'
-    fill_in :start_date, with: '15/09/2017'
-    fill_in :end_date, with: '20/09/2017'
+    add_new_space(name: name)
+    click_on name
+    fill_in :start_date, with: start_date
+    fill_in :end_date, with: end_date
+    click_on 'Request'
+  end
+
+  def submit_request(requester_email: 'Rick', space_name: 'WAGWAN', start_date: '15/09/2017', end_date: '20/09/2017')
+    sign_up(email: requester_email)
+    click_link space_name
+    fill_in :start_date, with: start_date
+    fill_in :end_date, with: end_date
     click_on 'Request'
   end
 end

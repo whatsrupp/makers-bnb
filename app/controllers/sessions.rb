@@ -15,7 +15,6 @@ class MakersBnB < Sinatra::Base
   end
 
   delete '/sessions' do
-
     session[:id] = nil
     flash.keep[:notice] = 'goodbye!'
     redirect to '/users/new'

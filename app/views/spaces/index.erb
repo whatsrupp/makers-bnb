@@ -10,6 +10,7 @@
     </p>
   </div>
 
+
 <div class='container col-8'>
   <div class='row'>
     <div class='text-center'>
@@ -29,6 +30,15 @@
     </div>
   </div>
 </div>
+
+  <form action='/filter/price-high' method='get'>
+    <input type='submit' id='filter-high-price-button' value='Filter by Highest Price' name='high'>
+  </form>
+
+  <form action='/filter/price-low' method='get'>
+    <input type='submit' id='filter-low-price-button' value='Filter by Lowest Price' name='low'>
+  </form>
+
 
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>
@@ -59,9 +69,11 @@
           </div>
 
         </a>
+
         <form action='/booking/new' method='get'>
           <button class='btn btn-default booking-link-button' type="submit" value="Book">Book</button>
         </form>
+
 
        </div>
     <%end%>
