@@ -8,9 +8,9 @@ module RequestHelpers
     click_on 'Request'
   end
 
-  def submit_request(name: 'WAGWAN', start_date: '15/09/2017', end_date: '20/09/2017')
-    sign_up
-    click_on name
+  def submit_request(requester_email: 'Rick', space_name: 'WAGWAN', start_date: '15/09/2017', end_date: '20/09/2017')
+    sign_up(email: requester_email)
+    click_link space_name
     fill_in :start_date, with: start_date
     fill_in :end_date, with: end_date
     click_on 'Request'

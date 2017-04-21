@@ -23,7 +23,7 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/requests/:id' do
-    @request = Request.first(id: params[:id])
+
     erb :'requests/id'
   end
 end
