@@ -1,31 +1,41 @@
 
 <h1 class='page-title'>Add New Space</h1>
-<div class='form-container'>
-  <form class='form' id='new-space-form' action='/spaces/new' method="post">
-    <div class='form-item'>
-      Name:<input class='form-textbox' type='text' id='space-name' name='name'>
-    </div>
 
-    <div class='form-item'>
-      Location:<input class='form-textbox' type='text' id='space-location' name='location'>
-    </div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
 
-    <div class='form-item'>
-      Price:<input class='form-textbox' type='text' id='space-price' name='price'>
-    </div>
+    <form id='new-space-form' action='/spaces/new' method='post'>
+      <div class="form-group">
+        <label for="name">Space Name:</label>
+        <input type="text" class="form-control" id="space-name" name='name' placeholder="Space name" required>
+      </div>
 
-    <div class='form-item'>
-      Description:<input class='form-textbox' type='text' id='space-description' name='description'>
-    </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="space-location" name='location' placeholder="City" required>
+      </div>
 
-    <div class='form-item'>
-      Available from:<input class='form-textbox' type='date' id='start-date' name='start date'>
-    </div>
+      <div class="form-group">
+        <label for="description">Descirption:</label>
+        <input type="text" class="form-control" id="description" name='description' placeholder="What's it like?" required>
+      </div>
 
-    <div class='form-item'>
-      Until:<input class='form-textbox' type='date' id='end-date' name='end date'>
-    </div>
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="text" class="form-control" id="space-price" name='price' placeholder="Price per night" required>
+      </div>
 
-    <input type='submit' id='submit-button' class='form-button' value='Submit'>
-  </form>
+      <div class="form-group">
+        <label for="Available From">Available From:</label>
+        <input type="date" class="form-control" id="start-date" name='start date' required>
+      </div>
+
+      <div class="form-group">
+        <label for="Until">Until:</label>
+        <input type="date" class="form-control" id="end-date" name='end date' required>
+      </div>
+
+      <button type="submit" class="btn btn-default" id='submit-button'>Submit</button>
+    </form>
+  </div>
 </div>

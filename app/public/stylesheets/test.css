@@ -3,7 +3,7 @@
 }
 
 body{
-  background-color: white;
+  background-image: url("https://www.jpl.nasa.gov/assets/images/content/tmp/home/missions_bg_image.jpg");
   height: 100%;
   width:100%;
 }
@@ -24,6 +24,8 @@ body{
 }
 .form-item{
   background-color: white;
+  opacity: 0.7;
+
 }
 .form-textbox{
   border:none;
