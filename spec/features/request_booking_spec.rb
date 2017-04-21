@@ -19,11 +19,11 @@ feature 'create new booking' do
     sign_in(email: 'woody@wood.com')
     visit '/requests/index'
     expect(page).to have_content space_name
-    click_link(space_name)
-    expect(page.status_code).to eq 200
     user_id = User.first(email: "Hasan@sultan.com").id
     space_id = Space.first(name: space_name).id
     request_id=Request.first(user_id: user_id, space_id: space_id).id
+    click_link("Request-ID-#{request_id}")
+    expect(page.status_code).to eq 200
     expect(current_path).to eq "/requests/#{request_id}"
 
   end
