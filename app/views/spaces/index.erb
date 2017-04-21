@@ -15,9 +15,11 @@
           <div class="col-md-6">
               <div id="custom-search-input">
                   <div class="input-group col-md-12">
+                    <form action='/filter' method='post' >
                       <input type="text" name="location" id="filter-location-search" class="form-control input-lg" placeholder="Filter by city" />
+                      </form>
                       <span class="input-group-btn">
-                          <button class="btn btn-info btn-lg" type="submit" id="filter-location-button" value="Filter">
+                          <button class="btn btn-info btn-lg" type="submit" id="filter" value="filter">
                               <i class="glyphicon glyphicon-search"></i>
                           </button>
                       </span>
@@ -25,6 +27,7 @@
               </div>
           </div>
   	</div>
+
   </div>
 
 <!-- <div class='container col-8'>
@@ -47,15 +50,19 @@
   </div>
 </div> -->
 
+<a href="/filter/price-high" name="high" class="btn btn-default col-sm-2"><span class="glyphicon glyphicon-chevron-up"></span>Filter by Highest Price</a>
+<a href="/filter/price-low" name="low" class="btn btn-default col-sm-2"><span class="glyphicon glyphicon-chevron-down"></span>Filter by Lowest Price</a>
+<!--
   <form action='/filter/price-high' method='get'>
     <input type='submit' id='filter-high-price-button' value='Filter by Highest Price' name='high'>
-  </form>
-
+  </form> -->
+<!--
   <form action='/filter/price-low' method='get'>
     <input type='submit' id='filter-low-price-button' value='Filter by Lowest Price' name='low'>
-  </form>
+  </form> -->
 
 
+<div class="col-lg-8">
   <%if !@spaces.empty?%>
     <%@spaces.each do |space|%>
       <div class='space-index-frame col-lg-3'>
@@ -89,10 +96,8 @@
         <form action='/booking/new' method='get'>
           <button class='btn btn-default booking-link-button' type="submit" value="Book">Book</button>
         </form>
-
-
        </div>
     <%end%>
   <%end%>
-
+</div>
 </body>
