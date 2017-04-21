@@ -1,33 +1,52 @@
-<div class=space-listing-container>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1><%=@space.name %></h1>
 
-  <div class='space-listing-info' id='name'>
-    Space Name: <%=@space.name %>
-  </div>
 
-  <div class='space-listing-info' id='location'>
-    Location: <%=@space.location %>
-  </div>
-  <div class='space-listing-info' id='price'>
-    Price: <%=@space.price %>
-  </div>
-  <div class='space-info' id='description'>
-    Description: <%=@space.description %>
-  </div>
+    <div class=space-listing-container>
 
-  <div class='calendar'>
+      <div class='space-listing-info' id='name'>
+        Space Name: <%=@space.name %>
+      </div>
+
+      <div class='space-listing-info' id='location'>
+        Location: <%=@space.location %>
+      </div>
+      <div class='space-listing-info' id='price'>
+        Price: <%=@space.price %>
+      </div>
+      <div class='space-info' id='description'>
+        Description: <%=@space.description %>
+      </div>
+
+      <div class='calendar'>
+      </div>
+
+      <div>
+        Available: <%=!@space.booked%>
+      </div>
+    </div>
+
+    <div class='calendar'>
+      <form action='/requests/new' method='post'>
+        <input type='date' name="start_date">
+        <input type='date' name="end_date">
+        <input type='hidden' name='id' value='<%=@space.id%>'>
+        <button type="submit" id='request-button' value="Request">Request</button>
+      </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
-
-  <div class='space-request-button'>
-    Request
-  </div>
-
-</div>
-
-<div class='calendar'>
-  <form action='/requests/new' method='post'>
-    <input type='date' name="start_date">
-    <input type='date' name="end_date">
-    <input type='hidden' name='id' value='<%=@space.id%>'>
-    <button type="submit" id='request-button' value="Request">Request</button>
-  </form>
 </div>
