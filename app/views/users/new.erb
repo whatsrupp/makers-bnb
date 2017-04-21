@@ -1,4 +1,4 @@
-<h1 class='page-title'>Sign Up</h1>
+<!-- <h1 class='page-title'>Sign Up</h1>
 <div class='form-container'>
   <form class='form' id='user-sign-up-form' action='/users' method='post'>
     <div class='form-item'>
@@ -12,4 +12,28 @@
     </div>
     <button class='form-button'type='submit' id='Register'>Register</button>
   </form>
-</div>
+</div> -->
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <form id='user-sign-up-form' action='/users' method='post'>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" placeholder="Email" name='email' value='<%= @user.email %>' required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" name='password' placeholder="Password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password Confirmation</label>
+          <input type="password" class="form-control" id="password_confirmation" name='password_confirmation' placeholder="Password Confirmation" required>
+        </div>
+
+        <button type="submit" class="btn btn-default" id='Register'>Register</button>
+      </form>
+    </div>
+  </div>
