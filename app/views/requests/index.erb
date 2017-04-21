@@ -2,7 +2,7 @@
 <h2>You have sent!!!!!!</h2>
 <% if !@requests.empty? %>
   <% @requests.each do |request| %>
-    <a class='request-invisible-link' id='<%= Space.first(id: request.space_id).name %>' href='/requests/<%= request.id %>'>
+    <a class='request-invisible-link' id='<%= "Request-ID-#{request.id}"%>' href='/requests/<%= request.id %>'>
       <%= Space.first(id: request.space_id).name %>
       <%= Space.first(id: request.space_id).booked? %>
       <%= request.start_date %>
@@ -15,7 +15,7 @@
 <% if !@spaces.empty? %>
   <% @spaces.each do |space| %>
     <% Request.all.select{|request| request if request[:space_id]==space.id}.each do |request| %>
-      <a class='request-invisible-link' id='<%=Space.first(id: request.space_id).name %>' href='/requests/<%=request.id%>'>
+      <a class='request-invisible-link' id='<%="Request-ID-#{request.id}" %>' href='/requests/<%=request.id%>'>
         <%= space.name %>
         <%= space.booked?%>
         <%= request.start_date %>

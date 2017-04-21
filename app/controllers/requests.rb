@@ -22,8 +22,17 @@ class MakersBnB < Sinatra::Base
     redirect '/spaces/index'
   end
 
-  get '/requests/:id' do
+  post '/requests/confirm' do
 
+    flash.keep[:confirmations]= "Space Booking Confirmed"
+
+    Request.first(id: params[:'request-id']).update(:confirmed => true)
+    redirect('/requests/index')
+  end
+  get '/requests/:id' do
+    @request_id=params[:id]
     erb :'requests/id'
   end
+
+
 end
