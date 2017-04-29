@@ -20,9 +20,9 @@ From here on out there is an assumption that you're familiar with interacting wi
 
 ### 2) Install basic requirements
 Firstly install bundler, this will make installing everything else a dream
-
+```
 gem intall bundler
-
+```
 then cd to the main directory of makers-bnb
 ```
 cd to/the/location/of/makers-bnb
@@ -64,10 +64,11 @@ rspec - keeping it all TDD since day 1
 
 
 ## Developers
-Alice Cheung
-Freddy Fallon
-Nick Rupp
-Hasan Sonmez
+
+[Alice Cheung](https://github.com/Alicespyglass)
+[Freddy Fallon](https://github.com/freddyfallon)
+[Nick Rupp](https://github.com/whatsrupp)
+[Hasan Sonmez](https://github.com/UltimateCoder00)
 
 ## User stories:
 
