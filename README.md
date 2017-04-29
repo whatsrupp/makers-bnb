@@ -18,7 +18,7 @@ From here on out there is an assumption that you're familiar with interacting wi
  git clone https://github.com/whatsrupp/makers-bnb
 ```
 
-### Basic requirements
+### 2) Install basic requirements
 Firstly install bundler, this will make installing everything else a dream
 
 gem intall bundler
@@ -32,7 +32,7 @@ run bundler
 bundle install 
 ```
 your machine should now have all the required packages to kick things off.
-### Boot the server
+### 3) Boot the server
 Launch the server using the rackup gem
 ```
 rackup
@@ -48,7 +48,7 @@ Open up the browser and enter the following into your URL.
 ```
 localhost:9292
 ```
-### Enjoy!
+### 4) Enjoy!
 Sign up and have a play! Just a heads up, the styling gets progressively worse the further you get through the file roots, it's one of our USPs.
 
 ## Packages Used
